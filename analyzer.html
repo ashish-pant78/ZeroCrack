@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CipherX — Password Analyzer</title>
+  <meta name="description" content="Real-time password strength analyzer with entropy calculation and crack-time estimation."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="cyber-grid" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation">
+    <a href="index.html" class="logo">Zero<span style="color:#fff">Crack</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="analyzer.html">Analyzer</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-wrapper">
+
+    <!-- HERO -->
+    <div class="analyzer-hero">
+      <span class="hero-badge"><span class="dot"></span>REAL-TIME ANALYSIS</span>
+      <h1 class="hero-title" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.8rem;">
+        Password <span class="highlight">Analyzer</span>
+      </h1>
+      <p style="color:var(--text-muted);font-size:0.95rem;max-width:500px;margin:0 auto;">
+        Enter any password below. Analysis happens entirely in your browser — nothing is ever transmitted.
+      </p>
+    </div>
+
+    <!-- ANALYZER PANEL -->
+    <div class="analyzer-container">
+
+      <!-- Input -->
+      <div class="glass-card" style="margin-bottom:1.5rem;">
+        <label class="input-label" for="password-input">// ENTER PASSWORD</label>
+        <div class="input-wrapper" style="margin-bottom:0;">
+          <input
+            type="password"
+            id="password-input"
+            class="password-input"
+            placeholder="Type or paste password..."
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Password input"
+          />
+          <button class="toggle-btn" id="toggle-btn" aria-label="Toggle password visibility">👁</button>
+        </div>
+      </div>
+
+      <!-- Strength Meter -->
+      <div class="glass-card" style="margin-bottom:1.5rem;">
+        <div class="strength-meter-wrap">
+          <div class="strength-label-row">
+            <span class="input-label" style="margin-bottom:0;">// STRENGTH</span>
+            <span class="strength-text" id="strength-text">—</span>
+            <span class="strength-percent" id="strength-pct"></span>
+          </div>
+          <div class="strength-bar-bg">
+            <div class="strength-bar" id="strength-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loader (shown briefly on input) -->
+      <div class="loader" id="loader" aria-label="Analyzing...">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+
+      <!-- Results Panel (revealed after input) -->
+      <div class="results-panel" id="results-panel">
+
+        <!-- Checklist -->
+        <div class="glass-card" style="margin-bottom:1.5rem;">
+          <span class="input-label" style="margin-bottom:1rem;display:block;">// REQUIREMENTS</span>
+          <div class="checklist" role="list" aria-label="Password requirements">
+            <div class="check-item" id="check-length" role="listitem">
+              <span class="icon">✖</span> Min 8 characters
+            </div>
+            <div class="check-item" id="check-upper" role="listitem">
+              <span class="icon">✖</span> Uppercase letter
+            </div>
+            <div class="check-item" id="check-lower" role="listitem">
+              <span class="icon">✖</span> Lowercase letter
+            </div>
+            <div class="check-item" id="check-number" role="listitem">
+              <span class="icon">✖</span> Number (0–9)
+            </div>
+            <div class="check-item" id="check-special" role="listitem">
+              <span class="icon">✖</span> Special character
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="stats-row" style="margin-bottom:1.5rem;">
+          <div class="stat-box">
+            <span class="val" id="entropy-val">—</span>
+            <span class="lbl">ENTROPY</span>
+          </div>
+          <div class="stat-box">
+            <span class="val" id="crack-time" style="font-size:1rem;">—</span>
+            <span class="lbl">EST. CRACK TIME</span>
+          </div>
+        </div>
+
+        <!-- AI Suggestions -->
+        <div class="glass-card suggestions-box" style="margin-bottom:1.5rem;">
+          <div class="suggestions-title">
+            🤖 AI SUGGESTIONS
+          </div>
+          <div id="suggestions-list">
+            <div class="suggestion-item" style="color:var(--text-muted)">Enter a password to get AI suggestions.</div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-row">
+          <button class="btn-primary" id="gen-btn" style="flex:1;">⚡ Generate</button>
+          <button class="btn-secondary" id="copy-btn" style="flex:1;">📋 Copy</button>
+        </div>
+
+      </div><!-- end results-panel -->
+
+      <!-- Security Tips -->
+      <div class="tips-section reveal">
+        <span class="section-label">Security Tips</span>
+        <h2 class="section-title" style="font-size:1.3rem;margin-bottom:0.5rem;">Best Practices</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <strong>USE A PASSWORD MANAGER</strong>
+            Store unique passwords for every account. Never reuse passwords across services.
+          </div>
+          <div class="tip-card">
+            <strong>ENABLE 2FA EVERYWHERE</strong>
+            Two-factor authentication adds a critical second layer even if your password is leaked.
+          </div>
+          <div class="tip-card">
+            <strong>LONGER = STRONGER</strong>
+            A 20-character passphrase beats a complex 8-character password by billions of iterations.
+          </div>
+          <div class="tip-card">
+            <strong>AVOID PERSONAL INFO</strong>
+            Names, birthdays, and keyboard patterns are the first things attackers try.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end analyzer-container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="logo" style="font-size:1.1rem;margin-bottom:0.4rem;">Zero<span style="color:#fff">Crack</span></div>
+        <p class="footer-copy">© 2026 ZeroCrack. Built by Ashish Pant. All rights reserved.</p>
+      </div>
+      <div class="social-links">
+       <a href="https://github.com/ashish-pant78" target="_blank" aria-label="GitHub">⌨</a>
+       <a href="https://www.linkedin.com/in/ashishpant78" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/pixeltoprogram7" target="_blank" aria-label="Instagram">🅾</a>
+        <a href="mailto:ashishpant062@gmail.com" aria-label="Email">@</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

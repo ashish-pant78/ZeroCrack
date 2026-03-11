@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CipherX — About</title>
+  <meta name="description" content="About CipherX — the AI-powered password security analyzer built by Ashish Pant."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="cyber-grid" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Zero<span style="color:#fff">Crack</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="analyzer.html">Analyzer</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-wrapper">
+
+    <!-- HERO -->
+    <div class="about-hero">
+      <span class="hero-badge"><span class="dot"></span>ABOUT THE PROJECT</span>
+      <h1 class="hero-title" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:0.8rem;">
+        What is <span class="highlight">ZeroCrack ?</span>
+      </h1>
+      <p style="color:var(--text-muted);font-size:0.95rem;max-width:540px;margin:0 auto;">
+        A premium, hacker-aesthetic cybersecurity tool built to make password security accessible to everyone — no excuses.
+      </p>
+    </div>
+
+    <div class="about-container">
+
+      <!-- About + Profile -->
+      <div class="about-grid reveal">
+        <div>
+          <span class="section-label">The Mission</span>
+          <h2 class="section-title" style="font-size:1.4rem;margin-bottom:1rem;">Built for Security-Conscious Users</h2>
+          <p class="about-text">
+            ZeroCrack is an advanced, fully client-side password security analyzer designed to help individuals and developers understand the true strength of their passwords — without sending a single character to any server.
+          </p>
+          <p class="about-text" style="margin-top:1rem;">
+            In 2026, credential theft remains the #1 attack vector in data breaches. Most people still use "password123" or their pet's name. ZeroCrack exists to change that — one password at a time.
+          </p>
+          <p class="about-text" style="margin-top:1rem;">
+            Using entropy mathematics, regex validation, and crack-time estimation, ZeroCrack gives you actionable, real intelligence about your digital security posture — for free, forever.
+          </p>
+        </div>
+
+        <!-- Creator Profile -->
+        <div class="profile-card glass-card">
+          <div class="profile-avatar">👨‍💻</div>
+          <div class="profile-name">Ashish Pant</div>
+          <div class="profile-role">BTECH CSE · CYBERSECURITY</div>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1.2rem;line-height:1.7;">
+            Passionate about building tools that make cybersecurity tangible and accessible. Bridging the gap between complex security concepts and everyday users.
+          </p>
+          <div class="skills-list">
+            <span class="skill-badge">Web Dev</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Security</span>
+            <span class="skill-badge">Cryptography</span>
+            <span class="skill-badge">HTML/CSS</span>
+            <span class="skill-badge">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why it matters in 2026 -->
+      <div class="glass-card reveal" style="margin-top:3rem;">
+        <span class="section-label">Context</span>
+        <h2 class="section-title" style="font-size:1.3rem;margin-bottom:1rem;">Why Password Security Matters in 2026</h2>
+        <p class="about-text">
+          The threat landscape has never been more intense. AI-powered credential stuffing attacks can test billions of passwords per day. Underground markets sell leaked credential databases for pennies. Ransomware groups target individuals just as aggressively as corporations.
+        </p>
+        <p class="about-text" style="margin-top:1rem;">
+          Meanwhile, the average person still uses the same password across 5+ accounts. A single breach cascades into a complete digital identity theft. The asymmetry is stark: defenders need everything right; attackers only need one weakness.
+        </p>
+        <p class="about-text" style="margin-top:1rem;">
+          ZeroCrackis a first step in closing that gap — education, awareness, and actionable tools, accessible to everyone with a browser.
+        </p>
+      </div>
+
+      <!-- Real-world risks -->
+      <div style="margin-top:3rem;">
+        <span class="section-label reveal">Real-World Risk</span>
+        <h2 class="section-title reveal" style="font-size:1.3rem;">Hacking by the Numbers</h2>
+        <div class="risk-grid reveal">
+          <div class="glass-card risk-card">
+            <span class="risk-number">23s</span>
+            <span class="risk-label">Average time to crack a 6-char password</span>
+          </div>
+          <div class="glass-card risk-card">
+            <span class="risk-number">$4.88M</span>
+            <span class="risk-label">Average cost of a data breach in 2024</span>
+          </div>
+          <div class="glass-card risk-card">
+            <span class="risk-number">2,200</span>
+            <span class="risk-label">Cyberattacks occur every day globally</span>
+          </div>
+          <div class="glass-card risk-card">
+            <span class="risk-number">65%</span>
+            <span class="risk-label">People reuse passwords across sites</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision -->
+      <div class="glass-card reveal" style="margin-top:3rem;background:linear-gradient(135deg,rgba(0,255,136,0.05),transparent);">
+        <span class="section-label">Vision</span>
+        <h2 class="section-title" style="font-size:1.3rem;margin-bottom:1rem;">What's Next for ZeroCrack</h2>
+        <p class="about-text">
+          The current version is a foundation. The vision is to expand ZeroCrack into a full AI-driven threat detection platform — incorporating:
+        </p>
+        <div style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+          <div class="tip-card" style="padding:1rem;">
+            <strong>BREACH DATABASE CHECK</strong>
+            Integrate Have I Been Pwned-style lookups without leaking your password.
+          </div>
+          <div class="tip-card" style="padding:1rem;">
+            <strong>AI THREAT MODELING</strong>
+            Machine learning models trained on real-world attack patterns.
+          </div>
+          <div class="tip-card" style="padding:1rem;">
+            <strong>PASSPHRASE GENERATOR</strong>
+            Diceware-based memorable but cryptographically strong phrases.
+          </div>
+          <div class="tip-card" style="padding:1rem;">
+            <strong>SECURITY SCORE CARD</strong>
+            Holistic digital security audit across password hygiene and 2FA.
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="text-align:center;margin-top:3rem;" class="reveal">
+        <a href="analyzer.html" class="btn-primary" style="font-size:0.75rem;">🔐 Try the Analyzer</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="logo" style="font-size:1.1rem;margin-bottom:0.4rem;">Zero<span style="color:#fff">Crack</span></div>
+        <p class="footer-copy">© 2026 ZeroCrack. Built by Ashish Pant. All rights reserved.</p>
+      </div>
+      <div class="social-links">
+     <a href="https://github.com/ashish-pant78" target="_blank" aria-label="GitHub">⌨</a>
+       <a href="https://www.linkedin.com/in/ashishpant78" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/pixeltoprogram7" target="_blank" aria-label="Instagram">🅾</a>
+        <a href="mailto:ashishpant062@gmail.com" aria-label="Email">@</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

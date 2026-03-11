@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CipherX — Advanced Password Security Analyzer</title>
+  <meta name="description" content="AI-powered password strength and security analyzer. Check your password before hackers do."/>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Fonts loaded via CSS @import -->
+</head>
+<body>
+
+  <!-- Matrix Background Canvas -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <!-- Cyber Grid Overlay -->
+  <div class="cyber-grid" aria-hidden="true"></div>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="CipherX Home">Zero<span style="color:#fff">Crack</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="analyzer.html">Analyzer</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ======= MAIN ======= -->
+  <main class="page-wrapper">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <span class="hero-badge"><span class="dot"></span>AI-POWERED SECURITY · 2026</span>
+
+      <h1 class="hero-title">
+        Check Your Password<br>
+        <span class="highlight">Before Hackers Do.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Advanced AI-Powered Password Security Analyzer. Entropy calculation, crack-time estimation & real-time suggestions.
+      </p>
+
+      <div class="hero-cta">
+        <a href="analyzer.html" class="btn-primary">
+          <span>🔐</span> Analyze Now
+        </a>
+        <a href="about.html" class="btn-secondary">
+          <span>↗</span> Learn More
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" aria-labelledby="features-title">
+      <div class="container">
+        <span class="section-label reveal">Core Features</span>
+        <h2 class="section-title reveal" id="features-title">Everything You Need to Stay Secure</h2>
+        <p class="section-sub reveal">Real-time analysis. Zero data sent to servers. 100% client-side privacy.</p>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="glass-card reveal reveal-delay-1">
+            <div class="feature-icon">🧠</div>
+            <h3 class="feature-title">Entropy Analysis</h3>
+            <p class="feature-desc">Calculates true password entropy in bits using character set mathematics — the gold standard for measuring password unpredictability.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card reveal reveal-delay-2">
+            <div class="feature-icon">⏱</div>
+            <h3 class="feature-title">Crack Time Estimation</h3>
+            <p class="feature-desc">Simulates a 10 billion guess/second GPU attack to estimate how long it would take a hacker to brute-force your password.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card reveal reveal-delay-3">
+            <div class="feature-icon">💡</div>
+            <h3 class="feature-title">AI Suggestions</h3>
+            <p class="feature-desc">Intelligent real-time recommendations to strengthen your password, detecting common patterns, repeated characters, and weak structures.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="glass-card reveal reveal-delay-1">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Password Generator</h3>
+            <p class="feature-desc">Generate cryptographically secure passwords using the Web Crypto API — truly random, never stored, never transmitted.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="glass-card reveal reveal-delay-2">
+            <div class="feature-icon">🛡</div>
+            <h3 class="feature-title">Requirement Checklist</h3>
+            <p class="feature-desc">Live checklist showing uppercase, lowercase, numbers, special characters, and length compliance as you type.</p>
+          </div>
+          <!-- Card 6 -->
+          <div class="glass-card reveal reveal-delay-3">
+            <div class="feature-icon">🔒</div>
+            <h3 class="feature-title">100% Private</h3>
+            <p class="feature-desc">Fully client-side. Your passwords never leave your browser. No backend, no logging, no tracking. Your data is yours alone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" style="padding-top:2rem;" aria-label="Statistics">
+      <div class="container">
+        <span class="section-label reveal">By The Numbers</span>
+        <h2 class="section-title reveal">Why Password Security Matters</h2>
+        <div class="stats-grid">
+          <div class="glass-card stat-card reveal reveal-delay-1">
+            <span class="stat-number" data-count="81" data-suffix="%">0%</span>
+            <span class="stat-label">of breaches involve weak passwords</span>
+          </div>
+          <div class="glass-card stat-card reveal reveal-delay-2">
+            <span class="stat-number" data-count="4" data-suffix="B+">0</span>
+            <span class="stat-label">credentials leaked in 2024</span>
+          </div>
+          <div class="glass-card stat-card reveal reveal-delay-3">
+            <span class="stat-number" data-count="30" data-suffix="s">0</span>
+            <span class="stat-label">to crack a 6-char password</span>
+          </div>
+          <div class="glass-card stat-card reveal reveal-delay-1">
+            <span class="stat-number" data-count="99" data-suffix="%">0%</span>
+            <span class="stat-label">of breaches are preventable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal" aria-label="Call to action">
+      <div class="cta-box">
+        <span class="section-label" style="text-align:center;display:block;margin-bottom:0.5rem;">Ready?</span>
+        <h2 class="section-title" style="margin-bottom:1rem;">Test Your Password Now</h2>
+        <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.9rem;">Free. Instant. Private. No signup required.</p>
+        <a href="analyzer.html" class="btn-primary">
+          <span>🔐</span> Launch Analyzer
+        </a>
+      </div>
+    </section>\
+    <div> this is mt first project</div>
+<div> thishh</div>    
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <div class="logo" style="font-size:1.1rem;margin-bottom:0.4rem;">Zero<span style="color:#fff">Crack</span></div>
+        <p class="footer-copy">© 2026 ZeroCrack. Built by Ashish Pant. All rights reserved.</p>
+      </div>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://github.com/ashish-pant78" target="_blank" aria-label="GitHub">⌨</a>
+       <a href="https://www.linkedin.com/in/ashishpant78" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/pixeltoprogram7" target="_blank" aria-label="Instagram">🅾</a>
+        <a href="mailto:ashishpant062@gmail.com" aria-label="Email">@</a>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
